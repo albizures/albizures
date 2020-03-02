@@ -49,8 +49,8 @@ module.exports = {
 			resolve: `gatsby-plugin-manifest`,
 			options: {
 				name: `Jose Albizures - Web developer`,
-				short_name: `albizures-blog`,
-				description: `Typography driven, feature-rich blogging theme with minimal aesthetics. Includes tags/categories support and extensive features for code blocks such as live preview, line numbers, and code highlighting.`,
+				short_name: `Jose Albizures`,
+				description: `Jose Albizures - Web developer`,
 				start_url: `/`,
 				background_color: `#fff`,
 				theme_color: `#6B46C1`,
