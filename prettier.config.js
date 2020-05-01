@@ -1,11 +1,1 @@
-module.exports = {
-	trailingComma: 'all',
-	useTabs: true,
-	tabWidth: 2,
-	semi: true,
-	jsxSingleQuote: false,
-	singleQuote: true,
-	bracketSpacing: true,
-	jsxBracketSameLine: false,
-	arrowParens: 'always',
-};
+module.exports = require('@albizures/prettier-config');
