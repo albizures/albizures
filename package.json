@@ -1,35 +1,36 @@
 {
-  "private": true,
-  "name": "albizures",
-  "description": "personal blog",
-  "version": "1.0.6",
-  "author": "Jose Albizures <jose@albizures.com>",
-  "license": "MIT",
-  "scripts": {
-    "build": "gatsby build",
-    "dev": "gatsby develop",
-    "develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
-    "build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
-    "start": "gatsby develop",
-    "serve": "gatsby serve",
-    "clean": "gatsby clean"
-  },
-  "dependencies": {
-    "@lekoarts/gatsby-theme-minimal-blog": "^2.3.1",
-    "gatsby": "^2.21.9",
-    "gatsby-plugin-google-analytics": "^2.3.0",
-    "gatsby-plugin-i18n": "^1.0.1",
-    "gatsby-plugin-manifest": "^2.4.1",
-    "gatsby-plugin-offline": "^3.2.0",
-    "gatsby-plugin-sitemap": "^2.4.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
-  },
-  "devDependencies": {
-    "@albizures/prettier-config": "^1.0.0",
-    "@now/node": "^1.5.1",
-    "@types/react-helmet": "^5.0.15",
-    "cross-env": "^7.0.2",
-    "gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.9"
-  }
+	"private": true,
+	"name": "albizures",
+	"description": "personal blog",
+	"version": "1.0.6",
+	"author": "Jose Albizures <jose@albizures.com>",
+	"license": "MIT",
+	"scripts": {
+		"build": "gatsby build",
+		"dev": "gatsby develop",
+		"develop:cypress": "cross-env CYPRESS_SUPPORT=y yarn develop",
+		"build:cypress": "cross-env CYPRESS_SUPPORT=y yarn build",
+		"start": "gatsby develop",
+		"serve": "gatsby serve",
+		"clean": "gatsby clean"
+	},
+	"dependencies": {
+		"@lekoarts/gatsby-theme-minimal-blog": "^2.4.0",
+		"gatsby": "^2.24.4",
+		"gatsby-plugin-google-analytics": "^2.3.11",
+		"gatsby-plugin-i18n": "^1.0.1",
+		"gatsby-plugin-manifest": "^2.4.18",
+		"gatsby-plugin-offline": "^3.2.18",
+		"gatsby-plugin-sitemap": "^2.4.11",
+		"react": "^16.13.1",
+		"react-dom": "^16.13.1"
+	},
+	"devDependencies": {
+		"@albizures/prettier-config": "^1.0.0",
+		"@now/node": "^1.7.2",
+		"@types/react-helmet": "^6.0.0",
+		"@types/theme-ui": "^0.3.5",
+		"cross-env": "^7.0.2",
+		"gatsby-plugin-webpack-bundle-analyser-v2": "^1.1.10"
+	}
 }

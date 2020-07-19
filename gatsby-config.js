@@ -16,6 +16,7 @@ module.exports = {
 		{
 			resolve: `@lekoarts/gatsby-theme-minimal-blog`,
 			options: {
+				feed: false,
 				navigation: [
 					{
 						title: `Blog`,

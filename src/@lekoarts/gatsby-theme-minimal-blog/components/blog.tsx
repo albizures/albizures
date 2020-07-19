@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import { jsx, Styled } from 'theme-ui';
+import { jsx, Heading, Link as TLink } from 'theme-ui';
 import { Link } from 'gatsby';
 import { Flex } from '@theme-ui/components';
 import Layout from '@lekoarts/gatsby-theme-minimal-blog/src/components/layout';
@@ -15,14 +15,13 @@ type PostsProps = {
 		date: string;
 		excerpt: string;
 		description: string;
-		timeToRead: number;
+		timeToRead?: number;
 		tags?: {
 			name: string;
 			slug: string;
 		}[];
 	}[];
 };
-
 const Blog = ({ posts }: PostsProps) => {
 	const { tagsPath, basePath } = useMinimalBlogConfig();
 
@@ -36,14 +35,14 @@ const Blog = ({ posts }: PostsProps) => {
 					flexFlow: `wrap`,
 				}}
 			>
-				<Styled.h2>Blog</Styled.h2>
-				<Styled.a
+				<Heading variant="styles.h2">Blog</Heading>
+				<TLink
 					as={Link}
 					sx={{ variant: `links.secondary` }}
-					to={replaceSlashes(`/${basePath}/${tagsPath}`)}
+					href={replaceSlashes(`/${basePath}/${tagsPath}`)}
 				>
 					View all tags
-				</Styled.a>
+				</TLink>
 			</Flex>
 			<Listing posts={posts} sx={{ mt: [4, 5] }} />
 		</Layout>
