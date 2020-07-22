@@ -30,7 +30,7 @@ module.exports = {
 					},
 					{
 						name: `Twitter`,
-						url: `https://twitter.com/_albizures`,
+						url: `https://twitter.com/albzrs`,
 					},
 					{
 						name: `Instagram`,
