@@ -1,0 +1,36 @@
+site:
+  name: Jose Albizures
+pages:
+  - url: '/blog'
+    label: 'blog'
+    fullLabel: '🧑‍💻 Sometimes I write stuff'
+    showInHome: true
+    asTopLink: false
+    external: false
+  - url: 'https://github.com/albizures'
+    label: 'github'
+    showInHome: false
+    asTopLink: true
+    external: true
+  - url: 'https://twitter.com/albzrs'
+    label: 'twitter'
+    showInHome: false
+    asTopLink: true
+    external: true
+  - url: '/listening'
+    label: 'listening'
+    fullLabel: '🎶 I like to listen to music and make playlists'
+    showInHome: false
+    asTopLink: false
+    external: false
+  - url: 'https://instagram.com/albzrs'
+    label: 'instagram'
+    showInHome: false
+    asTopLink: true
+    external: true
+  - url: '/building'
+    label: 'building'
+    fullLabel: '🛠 I like to build things'
+    showInHome: true
+    asTopLink: false
+    external: false

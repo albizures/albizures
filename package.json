@@ -1,0 +1,39 @@
+{
+	"name": "albizures.com",
+	"version": "1.0.0",
+	"main": "index.js",
+	"license": "MIT",
+	"scripts": {
+		"dev": "next dev -p 1234",
+		"build": "next build",
+		"start": "next start"
+	},
+	"dependencies": {
+		"@mapbox/rehype-prism": "^0.8.0",
+		"@mdx-js/loader": "^1.6.22",
+		"@next/mdx": "^12.0.7",
+		"classnames": "^2.3.1",
+		"daisyui": "^1.17.1",
+		"date-fns": "^2.27.0",
+		"gray-matter": "^4.0.3",
+		"next": "^12.0.7",
+		"next-mdx-enhanced": "^5.0.0",
+		"react": "^17.0.2",
+		"react-dom": "^17.0.2",
+		"remark": "^14.0.2",
+		"remark-html": "^15.0.1",
+		"remixicon": "^2.5.0"
+	},
+	"devDependencies": {
+		"@albizures/prettier-config": "^1.0.1",
+		"@svgr/webpack": "^6.1.2",
+		"@types/classnames": "^2.3.1",
+		"@types/react": "^17.0.37",
+		"autoprefixer": "^10.4.0",
+		"next-plugin-yaml": "^1.0.1",
+		"postcss": "^8.4.5",
+		"tailwindcss": "^3.0.7",
+		"typescript": "^4.5.4",
+		"yaml-loader": "^0.6.0"
+	}
+}

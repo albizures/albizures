@@ -1,0 +1,33 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@900&family=Roboto:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&family=Telex&display=swap'); */
+
+:root {
+	font-size: 24px;
+	@apply text-neutral-content bg-base-100;
+}
+
+* {
+	font-family: -apple-system, BlinkMacSystemFont, segoe ui, Roboto,
+		Helvetica, Arial, sans-serif, apple color emoji, segoe ui emoji,
+		segoe ui symbol;
+	@apply text-neutral-content;
+}
+
+.icon {
+	height: 20px;
+	width: 20px;
+	margin-bottom: 2px;
+	transform: scale(0.8);
+}
+
+.icon-big {
+	height: 40px;
+	width: 40px;
+}
+
+svg {
+	fill: currentColor;
+}
