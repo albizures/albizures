@@ -2,10 +2,8 @@ import React from 'react';
 import Link from 'next/link';
 import { Layout } from '../components/Layout';
 import { getAllPosts } from '../posts';
-import anyConfig from '../../config.yml';
-import { Config, Post } from '../types';
-
-const config = anyConfig as Config;
+import { config } from '../config';
+import { Post } from '../types';
 
 interface PageLinkProps {
 	href: string;
@@ -127,9 +125,7 @@ const Index: React.FC<Props> = (props) => {
 				Hi. 👋🏻
 			</h2>
 			<p className="text-2xl font-light text-primary">
-				I'm Jose - I'm a web developer from Guatemala 🇬🇹 living at
-				Moscow 🇷🇺, studing at Bauman Moscow State Technical
-				University.
+				{config.site.description}
 			</p>
 			<BuildSection />
 			<BlogSection posts={props.allPosts} />

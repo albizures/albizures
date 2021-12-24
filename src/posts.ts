@@ -32,8 +32,12 @@ export const getPostBySlug = (slug: string): IncompletePost => {
 		...data,
 		slug,
 		content,
+		url: `/${slug}`,
 		date: String(data.date),
-		tags: data.tags && Array.isArray(data.tags) ? data.tags : [],
+		tags:
+			data.tags && Array.isArray(data.tags)
+				? data.tags.map((t: string) => t.toLowerCase())
+				: [],
 	} as Post;
 	const missingItems: MissingPostItems = [];
 

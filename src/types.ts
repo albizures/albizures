@@ -9,6 +9,7 @@ export interface Page {
 
 export interface Post {
 	slug: string;
+	url: string;
 	title: string;
 	date: string;
 	author: string;
@@ -28,8 +29,12 @@ export interface IncompletePost {
 }
 
 export interface Config {
+	twitter: string;
 	site: {
-		name: string;
+		title: string;
+		description: string;
+		baseUrl: string;
+		keywords: string[];
 	};
 	pages: Page[];
 }

@@ -14,15 +14,15 @@ module.exports = {
 	variants: {
 		extend: {},
 	},
-	plugins: [require('daisyui')],
+	plugins: [require('daisyui'), require('@tailwindcss/typography')],
 	daisyui: {
 		themes: [
 			'luxury',
-			'halloween',
-			'synthwave',
-			'forest',
-			'black',
 			'lofi',
+			'synthwave',
+			'black',
+			'halloween',
+			'forest',
 		],
 	},
 };

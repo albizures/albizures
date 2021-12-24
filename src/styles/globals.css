@@ -31,3 +31,7 @@
 svg {
 	fill: currentColor;
 }
+
+.post-content .token {
+	@apply text-primary;
+}

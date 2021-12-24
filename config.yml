@@ -1,5 +1,18 @@
+twitter: '@albrzs'
 site:
-  name: Jose Albizures
+  title: Jose Albizures
+  description:
+    I'm Jose - I'm a web developer from Guatemala 🇬🇹 living at
+    Moscow 🇷🇺, studing at Bauman Moscow State Technical
+    University.
+  baseUrl: /
+  keywords:
+    - dev
+    - developer
+    - development
+    - webdev
+    - css
+    - javascript
 pages:
   - url: '/blog'
     label: 'blog'

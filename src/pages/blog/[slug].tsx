@@ -1,13 +1,12 @@
 import Head from 'next/head';
 import { Layout } from '../../components/Layout';
-import { PostBody } from '../../components/post';
+import { PostBody } from '../../components/post/PostBody';
 import { PostHeader } from '../../components/PostHeader';
 import { markdownToHtml } from '../../html-to-string';
+import { BasicMeta } from '../../components/meta/BasicMeta';
+import { TwitterCardMeta } from '../../components/meta/TwitterCardMeta';
 import { getAllPosts, getPostBySlug } from '../../posts';
-import anyConfig from '../../../config.yml';
-import { Config, Post } from '../../types';
-
-const config = anyConfig as Config;
+import { Post } from '../../types';
 
 interface Props {
 	missingItems: (keyof Post)[];
@@ -19,10 +18,9 @@ const Post: React.FC<Props> = (props) => {
 	return (
 		<Layout>
 			<article className="mb-32">
+				<BasicMeta {...post} />
+				<TwitterCardMeta {...post} />
 				<Head>
-					<title>
-						{post.title} | {config.site.name}
-					</title>
 					{post.ogImage && (
 						<meta property="og:image" content={post.ogImage.url} />
 					)}
@@ -32,6 +30,7 @@ const Post: React.FC<Props> = (props) => {
 					cover={post.cover}
 					date={post.date}
 					author={post.author}
+					tags={post.tags}
 				/>
 				<PostBody content={post.content} />
 			</article>
@@ -40,7 +39,7 @@ const Post: React.FC<Props> = (props) => {
 };
 
 export const getStaticProps = async ({ params }) => {
-	const { items: post, missingItems } = getPostBySlug(params.slug);
+	const { items: post } = getPostBySlug(params.slug);
 
 	const content = await markdownToHtml(post.content || '');
 

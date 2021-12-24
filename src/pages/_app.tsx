@@ -11,7 +11,7 @@ export default function App({ Component, pageProps }: AppProps) {
 		<>
 			<Head>
 				<link rel="shortcut icon" href="/favicon.ico" />
-				<title>{config.site.name}</title>
+				<title>{config.site.title}</title>
 			</Head>
 			<Component {...pageProps} />
 		</>

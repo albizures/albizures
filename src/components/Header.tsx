@@ -22,7 +22,7 @@ export const Header: React.FC = () => {
 			<div className="container px-2 max-w-screen-md flex justify-between items-center mx-auto">
 				<h2 className="text-xl">
 					<Link href="/">
-						<a className="text-primary">{config.site.name}</a>
+						<a className="text-primary">{config.site.title}</a>
 					</Link>
 				</h2>
 				<button className="md:hidden" onClick={onClick}>
