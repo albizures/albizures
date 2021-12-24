@@ -66,8 +66,6 @@ const parseLines = (raw: string) => {
 				result.push(...rangeToNumber(current));
 			}
 
-			console.log({ result });
-
 			return result;
 		}, [] as number[]);
 	} catch (error) {
