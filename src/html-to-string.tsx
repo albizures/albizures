@@ -1,6 +1,6 @@
 import React from 'react';
 import gfm from 'remark-gfm';
-import visit from 'unist-util-visit';
+import { visit } from 'unist-util-visit';
 import { MDXProvider } from '@mdx-js/react';
 import * as runtime from 'react/jsx-runtime';
 import { evaluate, EvaluateOptions } from '@mdx-js/mdx';
