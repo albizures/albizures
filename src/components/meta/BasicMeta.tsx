@@ -2,20 +2,18 @@ import React from 'react';
 import Head from 'next/head';
 import { config } from '../../config';
 
-type Props = {
+interface Props {
 	title?: string;
 	description?: string;
 	keywords?: string[];
 	author?: string;
 	url: string;
-};
+}
 
-export const BasicMeta: React.FC<Props> = (props) => {
+export function BasicMeta(props: Props) {
 	const { url } = props;
 
-	const description = props.description
-		? props.description
-		: config.site.description;
+	const description = props.description ?? config.site.description;
 	const title = props.title
 		? [props.title, config.site.title].join(' | ')
 		: config.site.title;
@@ -36,4 +34,4 @@ export const BasicMeta: React.FC<Props> = (props) => {
 			<link rel="canonical" href={canonical} />
 		</Head>
 	);
-};
+}

@@ -8,7 +8,7 @@ interface Props {
 	description?: string;
 }
 
-export const TwitterCardMeta: React.FC<Props> = (props) => {
+export function TwitterCardMeta(props: Props) {
 	const { url, title, description } = props;
 	return (
 		<Head>
@@ -28,4 +28,4 @@ export const TwitterCardMeta: React.FC<Props> = (props) => {
 			/>
 		</Head>
 	);
-};
+}

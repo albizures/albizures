@@ -5,21 +5,26 @@ import { getAllPosts } from '../posts';
 import { config } from '../config';
 import { Post } from '../types';
 
-interface PageLinkProps {
-	href: string;
-	target?: '_blank';
+interface SectionTitleProps {
+	children: React.ReactNode;
 }
 
-const SectionTitle: React.FC = (props) => {
+function SectionTitle(props: SectionTitleProps) {
 	const { children } = props;
 	return (
 		<h3 className="text-3xl pb-4 font-bold font-sans border-solid border-b border-gray-400 text-neutral-content">
 			{children}
 		</h3>
 	);
-};
+}
 
-const PageLink: React.FC<PageLinkProps> = (props) => {
+interface PageLinkProps {
+	href: string;
+	children: React.ReactNode;
+	target?: '_blank';
+}
+
+function PageLink(props: PageLinkProps) {
 	const { href, children, target } = props;
 	return (
 		<Link href={href}>
@@ -28,23 +33,27 @@ const PageLink: React.FC<PageLinkProps> = (props) => {
 			</a>
 		</Link>
 	);
-};
-
-const Section: React.FC = (props) => {
-	const { children } = props;
-	return <section className="mt-8">{children}</section>;
-};
-
-interface Props {
-	allPosts: Post[];
 }
 
-const SectionItem: React.FC = (props) => {
+interface SectionProps {
+	children: React.ReactNode;
+}
+
+function Section(props: SectionProps) {
+	const { children } = props;
+	return <section className="mt-8">{children}</section>;
+}
+
+interface SectionItemProps {
+	children: React.ReactNode;
+}
+
+function SectionItem(props: SectionItemProps) {
 	const { children } = props;
 	return <li className="mb-2 font-light">{children}</li>;
-};
+}
 
-const BuildSection: React.FC = () => {
+function BuildSection() {
 	const page = config.pages.find((page) => page.url === '/building');
 
 	if (!page || !page.showInHome) {
@@ -84,13 +93,13 @@ const BuildSection: React.FC = () => {
 			</ul>
 		</Section>
 	);
-};
+}
 
 interface BlogSectionProps {
 	posts: Post[];
 }
 
-const BlogSection: React.FC<BlogSectionProps> = (props) => {
+function BlogSection(props: BlogSectionProps) {
 	const page = config.pages.find((page) => page.url === '/blog');
 	const posts = props.posts.filter(
 		(post) => !post.tags.includes('draft'),
@@ -116,9 +125,14 @@ const BlogSection: React.FC<BlogSectionProps> = (props) => {
 			</ul>
 		</Section>
 	);
-};
+}
 
-const Index: React.FC<Props> = (props) => {
+interface Props {
+	allPosts: Post[];
+	children: React.ReactNode;
+}
+
+function Index(props: Props) {
 	return (
 		<Layout>
 			<h2 className="text-4xl text-neutral-content mb-4 font-bold">
@@ -131,14 +145,14 @@ const Index: React.FC<Props> = (props) => {
 			<BlogSection posts={props.allPosts} />
 		</Layout>
 	);
-};
+}
 
-export const getStaticProps = async () => {
+export async function getStaticProps() {
 	const allPosts = getAllPosts();
 
 	return {
 		props: { allPosts },
 	};
-};
+}
 
 export default Index;

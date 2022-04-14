@@ -9,7 +9,7 @@ interface Props {
 	tags: string[];
 }
 
-export const PostHeader: React.FC<Props> = (props) => {
+export function PostHeader(props: Props) {
 	const { title, date, tags } = props;
 	return (
 		<div className="post-header mb-8">
@@ -28,4 +28,4 @@ export const PostHeader: React.FC<Props> = (props) => {
 			</p>
 		</div>
 	);
-};
+}

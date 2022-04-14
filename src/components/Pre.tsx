@@ -5,13 +5,14 @@ import classNames from 'classnames';
 
 interface LineProps {
 	className?: string;
+	children: React.ReactNode;
 	noLineNumbers?: boolean;
 	highlight?: boolean;
 	style?: React.StyleHTMLAttributes<HTMLDivElement>;
 	numLine: number;
 }
 
-const Line: React.FC<LineProps> = (props) => {
+function Line(props: LineProps) {
 	const {
 		noLineNumbers = true,
 		highlight = false,
@@ -36,7 +37,7 @@ const Line: React.FC<LineProps> = (props) => {
 			<div className="table-cell pl-4">{children}</div>
 		</div>
 	);
-};
+}
 
 interface Properties {
 	children: string;
@@ -45,18 +46,7 @@ interface Properties {
 	lines?: string;
 }
 
-interface Props {
-	children: {
-		props: {
-			children: string;
-			noLineNumbers?: boolean;
-			title?: string;
-			lines?: string;
-		};
-	};
-}
-
-const parseLines = (raw: string) => {
+function parseLines(raw: string) {
 	try {
 		const linesOrRange = JSON.parse(raw) as string[];
 		return linesOrRange.reduce((result, current) => {
@@ -73,9 +63,9 @@ const parseLines = (raw: string) => {
 			`Invalid lines to be highlight!\n\tvalue="${raw}"`,
 		);
 	}
-};
+}
 
-const rangeToNumber = (range: string) => {
+function rangeToNumber(range: string) {
 	const nums = range
 		.split('-')
 		.map((n) => Number.parseInt(n))
@@ -91,16 +81,27 @@ const rangeToNumber = (range: string) => {
 	}
 
 	return nums;
-};
+}
 
-export const Pre: React.FC<Props> = (props) => {
+interface Props {
+	// children: {
+	// 	props: {
+	// 	};
+	// };
+	children: string;
+	noLineNumbers?: boolean;
+	title?: string;
+	lines?: string;
+}
+
+export function Pre(props: Props) {
 	// TODO support more languages
 	const {
 		children,
 		noLineNumbers = false,
 		title,
 		lines: linesOrRange = '[]',
-	} = props.children.props as Properties;
+	} = props as Properties;
 
 	const lines = parseLines(linesOrRange);
 
@@ -147,4 +148,4 @@ export const Pre: React.FC<Props> = (props) => {
 			)}
 		</Highlight>
 	);
-};
+}

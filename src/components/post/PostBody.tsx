@@ -6,7 +6,7 @@ interface Props {
 	content: string;
 }
 
-export const PostBody: React.FC<Props> = (props) => {
+export function PostBody(props: Props) {
 	const { content } = props;
 	return (
 		<div className="max-w-2xl mx-auto">
@@ -30,4 +30,4 @@ export const PostBody: React.FC<Props> = (props) => {
 			/>
 		</div>
 	);
-};
+}

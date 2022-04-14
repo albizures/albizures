@@ -10,12 +10,12 @@ import { Config } from '../types';
 
 const config = anyConfig as Config;
 
-export const Header: React.FC = () => {
+export function Header() {
 	const [menuIsOpen, setMenuIsOpen] = React.useState(false);
 
-	const onClick = () => {
+	function onClick() {
 		setMenuIsOpen(!menuIsOpen);
-	};
+	}
 
 	return (
 		<header className="p-2 md:px-0 border-b border-gray-800 relative">
@@ -65,4 +65,4 @@ export const Header: React.FC = () => {
 			</div>
 		</header>
 	);
-};
+}

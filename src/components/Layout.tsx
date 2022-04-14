@@ -2,7 +2,11 @@ import React from 'react';
 import { Header } from '../components/Header';
 import { Footer } from './Footer';
 
-export const Layout: React.FC = (props) => {
+interface Props {
+	children: React.ReactNode;
+}
+
+export function Layout(props: Props) {
 	const { children } = props;
 	return (
 		<>
@@ -13,4 +17,4 @@ export const Layout: React.FC = (props) => {
 			<Footer />
 		</>
 	);
-};
+}

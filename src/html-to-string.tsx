@@ -6,6 +6,7 @@ import * as runtime from 'react/jsx-runtime';
 import { evaluate, EvaluateOptions } from '@mdx-js/mdx';
 import { renderToStaticMarkup } from 'react-dom/server';
 import { Pre } from './components/Pre';
+import { MDXComponents } from 'mdx/types';
 
 function rehypeMetaAsAttributes() {
 	return (tree) => {
@@ -26,7 +27,7 @@ function rehypeMetaAsAttributes() {
 	};
 }
 
-const components = {
+const components: MDXComponents = {
 	pre: Pre,
 };
 

@@ -13,7 +13,7 @@ interface Props {
 	post: Post;
 }
 
-const Post: React.FC<Props> = (props) => {
+export default function Post(props: Props) {
 	const { post } = props;
 	return (
 		<Layout>
@@ -36,9 +36,9 @@ const Post: React.FC<Props> = (props) => {
 			</article>
 		</Layout>
 	);
-};
+}
 
-export const getStaticProps = async ({ params }) => {
+export async function getStaticProps({ params }) {
 	const { items: post } = getPostBySlug(params.slug);
 
 	const content = await markdownToHtml(post.content || '');
@@ -51,9 +51,9 @@ export const getStaticProps = async ({ params }) => {
 			},
 		},
 	};
-};
+}
 
-export const getStaticPaths = async () => {
+export async function getStaticPaths() {
 	const posts = getAllPosts();
 
 	return {
@@ -66,6 +66,4 @@ export const getStaticPaths = async () => {
 		}),
 		fallback: false,
 	};
-};
-
-export default Post;
+}
