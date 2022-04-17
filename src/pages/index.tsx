@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { Layout } from '../components/Layout';
 import { getAllPosts } from '../posts';
 import { config } from '../config';
-import { Post } from '../types';
+import { PostData } from '../types';
 
 interface SectionTitleProps {
 	children: React.ReactNode;
@@ -96,7 +96,7 @@ function BuildSection() {
 }
 
 interface BlogSectionProps {
-	posts: Post[];
+	posts: PostData[];
 }
 
 function BlogSection(props: BlogSectionProps) {
@@ -128,7 +128,7 @@ function BlogSection(props: BlogSectionProps) {
 }
 
 interface Props {
-	allPosts: Post[];
+	allPosts: PostData[];
 	children: React.ReactNode;
 }
 

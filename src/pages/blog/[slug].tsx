@@ -6,11 +6,11 @@ import { markdownToHtml } from '../../html-to-string';
 import { BasicMeta } from '../../components/meta/BasicMeta';
 import { TwitterCardMeta } from '../../components/meta/TwitterCardMeta';
 import { getAllPosts, getPostBySlug } from '../../posts';
-import { Post } from '../../types';
+import { PostData } from '../../types';
 
 interface Props {
-	missingItems: (keyof Post)[];
-	post: Post;
+	missingItems: (keyof PostData)[];
+	post: PostData;
 }
 
 export default function Post(props: Props) {

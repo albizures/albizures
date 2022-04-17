@@ -84,14 +84,14 @@ function rangeToNumber(range: string) {
 }
 
 interface Props {
-	// children: {
-	// 	props: {
-	// 	};
-	// };
-	children: string;
-	noLineNumbers?: boolean;
-	title?: string;
-	lines?: string;
+	children: {
+		props: {
+			children: string;
+			noLineNumbers?: boolean;
+			title?: string;
+			lines?: string;
+		};
+	};
 }
 
 export function Pre(props: Props) {
@@ -101,9 +101,10 @@ export function Pre(props: Props) {
 		noLineNumbers = false,
 		title,
 		lines: linesOrRange = '[]',
-	} = props as Properties;
+	} = props.children.props as Properties;
 
 	const lines = parseLines(linesOrRange);
+	console.log(props);
 
 	return (
 		<Highlight

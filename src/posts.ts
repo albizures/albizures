@@ -1,7 +1,7 @@
 import fs from 'fs';
 import { join } from 'path';
 import matter from 'gray-matter';
-import { IncompletePost, MissingPostItems, Post } from './types';
+import { IncompletePost, MissingPostItems, PostData } from './types';
 
 const postsDirectory = join(process.cwd(), '_posts');
 
@@ -38,7 +38,7 @@ export const getPostBySlug = (slug: string): IncompletePost => {
 			data.tags && Array.isArray(data.tags)
 				? data.tags.map((t: string) => t.toLowerCase())
 				: [],
-	} as Post;
+	} as PostData;
 	const missingItems: MissingPostItems = [];
 
 	requiredFields.forEach((field) => {

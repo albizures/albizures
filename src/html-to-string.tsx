@@ -28,6 +28,7 @@ function rehypeMetaAsAttributes() {
 }
 
 const components: MDXComponents = {
+	// @ts-ignore
 	pre: Pre,
 };
 

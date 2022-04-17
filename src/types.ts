@@ -7,7 +7,7 @@ export interface Page {
 	external: boolean;
 }
 
-export interface Post {
+export interface PostData {
 	slug: string;
 	url: string;
 	title: string;
@@ -21,11 +21,11 @@ export interface Post {
 	};
 }
 
-export type MissingPostItems = (keyof Post)[];
+export type MissingPostItems = (keyof PostData)[];
 
 export interface IncompletePost {
 	missingItems: MissingPostItems;
-	items: Post;
+	items: PostData;
 }
 
 export interface Config {
